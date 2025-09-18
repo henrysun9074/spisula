@@ -1,0 +1,10 @@
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Unsupported format
+/var/spool/slurmd/job36589860/slurm_script: line 30: 2043723 Aborted                 jellyfish count -C -m 21 -s 5G -c 6 -t 16 -o SSo1_k21.jf $SSO
+Failed to open input file 'SSo1_k21.jf'
+Failed to open input file 'SSo1_k21.jf'
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Unsupported format
+/var/spool/slurmd/job36589860/slurm_script: line 53: 2043731 Aborted                 jellyfish count -C -m 21 -s 5G -c 6 -t 16 -o SSi1_k21.jf $SSI
+Failed to open input file 'SSi1_k21.jf'
+Failed to open input file 'SSi1_k21.jf'

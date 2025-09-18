@@ -3,8 +3,8 @@
 #SBATCH --output=01_spisula_kmer.out
 #SBATCH --error=01_spisula_kmer.err
 #SBATCH --partition=common
-#SBATCH --cpus-per-task=8
-#SBATCH --mem=64G
+#SBATCH --cpus-per-task=16
+#SBATCH --mem=128G
 #SBATCH --exclusive
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=hs325@duke.edu
@@ -13,9 +13,14 @@ cd /work/hs325/surfclam
 module load Jellyfish
 
 # Paths
-SSO="/work/hs325/surfclam/SSo1/SSo1_all_trimmed.fq.gz"
-SSI="/work/hs325/surfclam/SSi1/SSi1_7_all_trimmed.fq.gz"
+SSO_GZ="/work/hs325/surfclam/SSo1/SSo1_all_trimmed.fq.gz"
+SSI_GZ="/work/hs325/surfclam/SSi1/SSi1_7_all_trimmed.fq.gz"
 
+SSO="SSo1_all_trimmed.fq"
+SSI="SSi1_all_trimmed.fq"
+
+gunzip -c "$SSO_GZ" > "$SSO"
+gunzip -c "$SSI_GZ" > "$SSI"
 
 ####################### SOLIDISSIMA ##############################
 
@@ -27,7 +32,7 @@ jellyfish count \
   -c 6 \
   -t 16 \
   -o SSo1_k21.jf \
-  $SSO
+  "$SSO"
 
 jellyfish dump -c SSo1_k21.jf > SSo1_k21_counts.txt
 
@@ -50,7 +55,7 @@ jellyfish count \
   -c 6 \
   -t 16 \
   -o SSi1_k21.jf \
-  $SSI
+  "$SSI"
 
 jellyfish dump -c SSi1_k21.jf > SSi1_k21_counts.txt
 
