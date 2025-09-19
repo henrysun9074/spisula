@@ -5,7 +5,7 @@
 # Ignore all Jellyfish outputs
 *.jf
 *.txt
-*.histo
+#*.histo
 
 SSo1/**
 SSi1/**

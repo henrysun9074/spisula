@@ -19,50 +19,60 @@ SSI_GZ="/work/hs325/surfclam/SSi1/SSi1_7_all_trimmed.fq.gz"
 SSO="SSo1_all_trimmed.fq"
 SSI="SSi1_all_trimmed.fq"
 
-K=17
+gunzip -c "$SSO_GZ" > "$SSO"
+gunzip -c "$SSI_GZ" > "$SSI"
 
-#comment when not needed anymore
- gunzip -c "$SSO_GZ" > "$SSO"
- gunzip -c "$SSI_GZ" > "$SSI"
+# default to 21 
+KMER_SIZES=("$@")
+if [ ${#KMER_SIZES[@]} -eq 0 ]; then
+  KMER_SIZES=(21)
+fi
+
+echo "Running Jellyfish for k-mer sizes: ${KMER_SIZES[*]}"
+for K in "${KMER_SIZES[@]}"; do
+  echo "=== Processing k=$K ==="
 
 ####################### SOLIDISSIMA ##############################
+  jellyfish count \
+    -C \
+    -m "$K" \
+    -s 5G \
+    -c 6 \
+    -t 16 \
+    -o "SSo1_k${K}.jf" \
+    "$SSO"
 
-jellyfish count \
-  -C \
-  -m "$K" \
-  -s 5G \
-  -c 6 \
-  -t 16 \
-  -o "SSo1_k${K}.jf" \
-  "$SSO"
+  jellyfish dump -c "SSo1_k${K}.jf" > "SSo1_k${K}_counts.txt"
 
-jellyfish dump -c "SSo1_k${K}.jf" > "SSo1_k${K}_counts.txt"
-
-jellyfish histo \
-  -t 16 \
-  -l 1 \
-  -h 100000 \
-  -i 1 \
-  -o "SSo1_k${K}.histo" \
-  "SSo1_k${K}.jf"
+  jellyfish histo \
+    -t 16 \
+    -l 1 \
+    -h 100000 \
+    -i 1 \
+    -o "SSo1_k${K}.histo" \
+    "SSo1_k${K}.jf"
 
 ####################### SIMILIS ##############################
+  jellyfish count \
+    -C \
+    -m "$K" \
+    -s 5G \
+    -c 6 \
+    -t 16 \
+    -o "SSi1_k${K}.jf" \
+    "$SSI"
 
-jellyfish count \
-  -C \
-  -m "$K" \
-  -s 5G \
-  -c 6 \
-  -t 16 \
-  -o "SSi1_k${K}.jf" \
-  "$SSI"
+  jellyfish dump -c "SSi1_k${K}.jf" > "SSi1_k${K}_counts.txt"
 
-jellyfish dump -c "SSi1_k${K}.jf" > "SSi1_k${K}_counts.txt"
+  jellyfish histo \
+    -t 16 \
+    -l 1 \
+    -h 100000 \
+    -i 1 \
+    -o "SSi1_k${K}.histo" \
+    "SSi1_k${K}.jf"
+done
 
-jellyfish histo \
-  -t 16 \
-  -l 1 \
-  -h 100000 \
-  -i 1 \
-  -o "SSi1_k${K}.histo" \
-  "SSi1_k${K}.jf"
+# Cleanup unzipped FASTQs
+rm -f "$SSO" "$SSI"
+
