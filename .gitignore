@@ -1,2 +1,11 @@
-*fq.gz
+# Ignore all FASTQ files (compressed or not)
 *.fq
+*.fq.gz
+
+# Ignore all Jellyfish outputs
+*.jf
+*.txt
+*.histo
+
+SSo1/**
+SSi1/**
