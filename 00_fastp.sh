@@ -9,5 +9,21 @@
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=hs325@duke.edu
 
+## 1 - Unzip .fq files with gunzip
 
-### add in fastp code here. Change to use Phred score of 20
+## 2 - Run fastp for each sample and fastq file. keep phred=20
+
+fastp \
+  -i SSi1_CKDN250012368-1A_22V3VWLT4_L7_1.fq.gz \
+  -I SSi1_CKDN250012368-1A_22V3VWLT4_L7_2.fq.gz \
+  -o SSi1_trimmed_R1.fq.gz \
+  -O SSi1_trimmed_R2.fq.gz \
+  -h SSi1_fastp_report.html \
+  -j SSi1_fastp_report.json \
+  -q 20 \
+  -w 8
+
+cat SSi1_trimmed_R1.fq.gz SSi1_trimmed_R2.fq.gz > SSi1_trimmed_all.fq.gz
+
+
+## Combine all fq files (SSo/SSi 1-3) into 1 per subspecies for jellyfish
