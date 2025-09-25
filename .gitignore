@@ -1,6 +1,7 @@
 # Ignore all FASTQ files (compressed or not)
 *.fq
 *.fq.gz
+*.zip
 
 # Ignore all Jellyfish outputs
 *.jf
