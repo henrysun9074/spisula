@@ -12,7 +12,7 @@
 ## - Run fastp for each sample and fastq file. keep phred=20
 
 ##### SOLIDISSIMA ########
-echo "Starting SSo1"
+echo "Starting So1"
 
 fastp \
   -i SSo1/SSo1_CKDN250012365-1A_22V3VWLT4_L6_1.fq.gz \
@@ -144,3 +144,5 @@ cat SSi3/SSi3_trimmed_R1.fq.gz SSi3/SSi3_trimmed_R2.fq.gz > SSi3/SSi3_trimmed_al
 ## Combine all fq files (SSo/SSi 1-3) into 1 per subspecies for jellyfish
 cat SSo1/SSo1_trimmed20_all.fq.gz SSo2/SSo2_trimmed_all.fq.gz SSo3/SSo3_trimmed_all.fq.gz > SSoPooledAllTrimmed.fq.gz
 cat SSi1/SSi1_trimmed20_all.fq.gz SSi2/SSi2_trimmed_all.fq.gz SSi3/SSi3_trimmed_all.fq.gz > SSiPooledAllTrimmed.fq.gz
+
+echo "Finished script"

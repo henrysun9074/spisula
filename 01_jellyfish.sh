@@ -13,14 +13,17 @@ cd /work/hs325/surfclam
 module load Jellyfish
 
 # Paths
-SSO_GZ="/work/hs325/surfclam/SSo1/SSo1_all_trimmed.fq.gz"
-SSI_GZ="/work/hs325/surfclam/SSi1/SSi1_7_all_trimmed.fq.gz"
+SSo_GZ="SSoPooledAllTrimmed.fq.gz"
+SSI_GZ="SSiPooledAllTrimmed.fq.gz"
 
-SSO="SSo1_all_trimmed.fq"
-SSI="SSi1_all_trimmed.fq"
+SSo="SSoPooledAllTrimmed.fq"
+SSi="SSiPooledAllTrimmed.fq"
 
-gunzip -c "$SSO_GZ" > "$SSO"
-gunzip -c "$SSI_GZ" > "$SSI"
+gunzip -c "$SSo_GZ" > "$SSo"
+gunzip -c "$SSI_GZ" > "$SSi"
+
+OUTDIR="ktests_pooled"
+# mkdir -p "$OUTDIR"
 
 # default to 21 
 KMER_SIZES=("$@")
@@ -31,7 +34,7 @@ fi
 echo "Running Jellyfish for k-mer sizes: ${KMER_SIZES[*]}"
 for K in "${KMER_SIZES[@]}"; do
   echo "=== Processing k=$K ==="
-
+  
 ####################### SOLIDISSIMA ##############################
   jellyfish count \
     -C \
@@ -39,18 +42,18 @@ for K in "${KMER_SIZES[@]}"; do
     -s 5G \
     -c 6 \
     -t 16 \
-    -o "SSo1_k${K}.jf" \
-    "$SSO"
+    -o "$OUTDIR/SSo_k${K}.jf" \
+    "$SSo"
 
-  jellyfish dump -c "SSo1_k${K}.jf" > "SSo1_k${K}_counts.txt"
+  jellyfish dump -c "$OUTDIR/SSo_k${K}.jf" > "$OUTDIR/SSo_k${K}_counts.txt"
 
   jellyfish histo \
     -t 16 \
     -l 1 \
     -h 100000 \
     -i 1 \
-    -o "SSo1_k${K}.histo" \
-    "SSo1_k${K}.jf"
+    -o "$OUTDIR/SSo_k${K}.histo" \
+    "$OUTDIR/SSo_k${K}.jf"
 
 ####################### SIMILIS ##############################
   jellyfish count \
@@ -59,20 +62,21 @@ for K in "${KMER_SIZES[@]}"; do
     -s 5G \
     -c 6 \
     -t 16 \
-    -o "SSi1_k${K}.jf" \
+    -o "$OUTDIR/SSi_k${K}.jf" \
     "$SSI"
 
-  jellyfish dump -c "SSi1_k${K}.jf" > "SSi1_k${K}_counts.txt"
+  jellyfish dump -c "$OUTDIR/SSi_k${K}.jf" > "$OUTDIR/SSi_k${K}_counts.txt"
 
   jellyfish histo \
     -t 16 \
     -l 1 \
     -h 100000 \
     -i 1 \
-    -o "SSi1_k${K}.histo" \
-    "SSi1_k${K}.jf"
+    -o "$OUTDIR/SSi_k${K}.histo" \
+    "$OUTDIR/SSi_k${K}.jf"
 done
 
 # Cleanup unzipped FASTQs
-rm -f "$SSO" "$SSI"
+rm -f "$SSo" "$SSI"
 
+echo "Script finished, unzipped FASTQs removed"
