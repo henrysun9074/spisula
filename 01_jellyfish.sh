@@ -63,7 +63,7 @@ for K in "${KMER_SIZES[@]}"; do
     -c 6 \
     -t 16 \
     -o "$OUTDIR/SSi_k${K}.jf" \
-    "$SSI"
+    "$SSi"
 
   jellyfish dump -c "$OUTDIR/SSi_k${K}.jf" > "$OUTDIR/SSi_k${K}_counts.txt"
 
@@ -77,6 +77,6 @@ for K in "${KMER_SIZES[@]}"; do
 done
 
 # Cleanup unzipped FASTQs
-rm -f "$SSo" "$SSI"
+rm -f "$SSo" "$SSi"
 
 echo "Script finished, unzipped FASTQs removed"
