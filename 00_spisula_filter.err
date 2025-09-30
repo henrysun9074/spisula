@@ -42,7 +42,7 @@ JSON report: fq_reports/pooled-phred30/SSo1_run1_fastp_report.json
 HTML report: fq_reports/pooled-phred30/SSo1_run1_fastp_report.html
 
 fastp -i raw/SSo1/SSo1_CKDN250012365-1A_22V3VWLT4_L6_1.fq.gz -I raw/SSo1/SSo1_CKDN250012365-1A_22V3VWLT4_L6_2.fq.gz -o fq_filtered/pooled-phred30/SSo1_run1_R1.fq.gz -O fq_filtered/pooled-phred30/SSo1_run1_R2.fq.gz -h fq_reports/pooled-phred30/SSo1_run1_fastp_report.html -j fq_reports/pooled-phred30/SSo1_run1_fastp_report.json -q 30 -w 8 
-fastp v1.0.1, time used: 259 seconds
+fastp v1.0.1, time used: 256 seconds
 Read1 before filtering:
 total reads: 7180710
 total bases: 1077106500
@@ -132,4 +132,320 @@ JSON report: fq_reports/pooled-phred30/SSo1_run3_fastp_report.json
 HTML report: fq_reports/pooled-phred30/SSo1_run3_fastp_report.html
 
 fastp -i raw/SSo1/SSo1_CKDN250012365-1A_22WVMFLT4_L8_1.fq.gz -I raw/SSo1/SSo1_CKDN250012365-1A_22WVMFLT4_L8_2.fq.gz -o fq_filtered/pooled-phred30/SSo1_run3_R1.fq.gz -O fq_filtered/pooled-phred30/SSo1_run3_R2.fq.gz -h fq_reports/pooled-phred30/SSo1_run3_fastp_report.html -j fq_reports/pooled-phred30/SSo1_run3_fastp_report.json -q 30 -w 8 
-fastp v1.0.1, time used: 120 seconds
+fastp v1.0.1, time used: 119 seconds
+Read1 before filtering:
+total reads: 257016232
+total bases: 38552434800
+Q20 bases: 38338947779(99.4462%)
+Q30 bases: 37588368062(97.4993%)
+Q40 bases: 37588368062(97.4993%)
+
+Read2 before filtering:
+total reads: 257016232
+total bases: 38552434800
+Q20 bases: 38243567737(99.1988%)
+Q30 bases: 37412587488(97.0434%)
+Q40 bases: 37412587488(97.0434%)
+
+Read1 after filtering:
+total reads: 252853712
+total bases: 37736570852
+Q20 bases: 37639821050(99.7436%)
+Q30 bases: 37043628503(98.1637%)
+Q40 bases: 37043628503(98.1637%)
+
+Read2 after filtering:
+total reads: 252853712
+total bases: 37736570852
+Q20 bases: 37618134465(99.6861%)
+Q30 bases: 36990303538(98.0224%)
+Q40 bases: 36990303538(98.0224%)
+
+Filtering result:
+reads passed filter: 505707424
+reads failed due to low quality: 8221468
+reads failed due to too many N: 103572
+reads failed due to too short: 0
+reads with adapter trimmed: 7218028
+bases trimmed due to adapters: 390656890
+
+Duplication rate: 33.6602%
+
+Insert size peak (evaluated by paired-end reads): 269
+
+JSON report: fq_reports/pooled-phred30/SSo2_fastp_report.json
+HTML report: fq_reports/pooled-phred30/SSo2_fastp_report.html
+
+fastp -i raw/SSo2/SSo2_CKDN250012366-1A_22V3VWLT4_L6_1.fq.gz -I raw/SSo2/SSo2_CKDN250012366-1A_22V3VWLT4_L6_2.fq.gz -o fq_filtered/pooled-phred30/SSo2_R1.fq.gz -O fq_filtered/pooled-phred30/SSo2_R2.fq.gz -h fq_reports/pooled-phred30/SSo2_fastp_report.html -j fq_reports/pooled-phred30/SSo2_fastp_report.json -q 30 -w 8 
+fastp v1.0.1, time used: 710 seconds
+Read1 before filtering:
+total reads: 203813838
+total bases: 30572075700
+Q20 bases: 30382508671(99.3799%)
+Q30 bases: 29776855315(97.3989%)
+Q40 bases: 29776855315(97.3989%)
+
+Read2 before filtering:
+total reads: 203813838
+total bases: 30572075700
+Q20 bases: 30264455268(98.9938%)
+Q30 bases: 29508136400(96.5199%)
+Q40 bases: 29508136400(96.5199%)
+
+Read1 after filtering:
+total reads: 199736161
+total bases: 29794031488
+Q20 bases: 29713681349(99.7303%)
+Q30 bases: 29250526495(98.1758%)
+Q40 bases: 29250526495(98.1758%)
+
+Read2 after filtering:
+total reads: 199736161
+total bases: 29794031488
+Q20 bases: 29681474350(99.6222%)
+Q30 bases: 29134118784(97.7851%)
+Q40 bases: 29134118784(97.7851%)
+
+Filtering result:
+reads passed filter: 399472322
+reads failed due to low quality: 8100866
+reads failed due to too many N: 54488
+reads failed due to too short: 0
+reads with adapter trimmed: 6090988
+bases trimmed due to adapters: 340067822
+
+Duplication rate: 35.7612%
+
+Insert size peak (evaluated by paired-end reads): 269
+
+JSON report: fq_reports/pooled-phred30/SSo3_fastp_report.json
+HTML report: fq_reports/pooled-phred30/SSo3_fastp_report.html
+
+fastp -i raw/SSo3/SSo3_CKDN250012367-1A_22V3VWLT4_L7_1.fq.gz -I raw/SSo3/SSo3_CKDN250012367-1A_22V3VWLT4_L7_2.fq.gz -o fq_filtered/pooled-phred30/SSo3_R1.fq.gz -O fq_filtered/pooled-phred30/SSo3_R2.fq.gz -h fq_reports/pooled-phred30/SSo3_fastp_report.html -j fq_reports/pooled-phred30/SSo3_fastp_report.json -q 30 -w 8 
+fastp v1.0.1, time used: 557 seconds
+Read1 before filtering:
+total reads: 196524490
+total bases: 29478673500
+Q20 bases: 29302469816(99.4023%)
+Q30 bases: 28690269558(97.3255%)
+Q40 bases: 28690269558(97.3255%)
+
+Read2 before filtering:
+total reads: 196524490
+total bases: 29478673500
+Q20 bases: 29202326615(99.0626%)
+Q30 bases: 28477400113(96.6034%)
+Q40 bases: 28477400113(96.6034%)
+
+Read1 after filtering:
+total reads: 192917438
+total bases: 28790287680
+Q20 bases: 28709308291(99.7187%)
+Q30 bases: 28224216589(98.0338%)
+Q40 bases: 28224216589(98.0338%)
+
+Read2 after filtering:
+total reads: 192917438
+total bases: 28790287680
+Q20 bases: 28681208089(99.6211%)
+Q30 bases: 28137122893(97.7313%)
+Q40 bases: 28137122893(97.7313%)
+
+Filtering result:
+reads passed filter: 385834876
+reads failed due to low quality: 7161550
+reads failed due to too many N: 52554
+reads failed due to too short: 0
+reads with adapter trimmed: 5386014
+bases trimmed due to adapters: 300796910
+
+Duplication rate: 32.3881%
+
+Insert size peak (evaluated by paired-end reads): 269
+
+JSON report: fq_reports/pooled-phred30/SSi1_fastp_report.json
+HTML report: fq_reports/pooled-phred30/SSi1_fastp_report.html
+
+fastp -i raw/SSi1/SSi1_CKDN250012368-1A_22V3VWLT4_L7_1.fq.gz -I raw/SSi1/SSi1_CKDN250012368-1A_22V3VWLT4_L7_2.fq.gz -o fq_filtered/pooled-phred30/SSi1_R1.fq.gz -O fq_filtered/pooled-phred30/SSi1_R2.fq.gz -h fq_reports/pooled-phred30/SSi1_fastp_report.html -j fq_reports/pooled-phred30/SSi1_fastp_report.json -q 30 -w 8 
+fastp v1.0.1, time used: 535 seconds
+Read1 before filtering:
+total reads: 124559656
+total bases: 18683948400
+Q20 bases: 18566635147(99.3721%)
+Q30 bases: 18161251590(97.2024%)
+Q40 bases: 18161251590(97.2024%)
+
+Read2 before filtering:
+total reads: 124559656
+total bases: 18683948400
+Q20 bases: 18484541112(98.9327%)
+Q30 bases: 17987417547(96.272%)
+Q40 bases: 17987417547(96.272%)
+
+Read1 after filtering:
+total reads: 121776676
+total bases: 18172566628
+Q20 bases: 18118852737(99.7044%)
+Q30 bases: 17801789982(97.9597%)
+Q40 bases: 17801789982(97.9597%)
+
+Read2 after filtering:
+total reads: 121776676
+total bases: 18172566628
+Q20 bases: 18100358461(99.6027%)
+Q30 bases: 17747011740(97.6583%)
+Q40 bases: 17747011740(97.6583%)
+
+Filtering result:
+reads passed filter: 243553352
+reads failed due to low quality: 5533456
+reads failed due to too many N: 32504
+reads failed due to too short: 0
+reads with adapter trimmed: 3452910
+bases trimmed due to adapters: 191987182
+
+Duplication rate: 31.3869%
+
+Insert size peak (evaluated by paired-end reads): 269
+
+JSON report: fq_reports/pooled-phred30/SSi2_run1_fastp_report.json
+HTML report: fq_reports/pooled-phred30/SSi2_run1_fastp_report.html
+
+fastp -i raw/SSi2/SSi2_CKDN250012369-1A_22V3VWLT4_L7_1.fq.gz -I raw/SSi2/SSi2_CKDN250012369-1A_22V3VWLT4_L7_2.fq.gz -o fq_filtered/pooled-phred30/SSi2_run1_R1.fq.gz -O fq_filtered/pooled-phred30/SSi2_run1_R2.fq.gz -h fq_reports/pooled-phred30/SSi2_run1_fastp_report.html -j fq_reports/pooled-phred30/SSi2_run1_fastp_report.json -q 30 -w 8 
+fastp v1.0.1, time used: 348 seconds
+Read1 before filtering:
+total reads: 12507554
+total bases: 1876133100
+Q20 bases: 1862118570(99.253%)
+Q30 bases: 1810780092(96.5166%)
+Q40 bases: 1810780092(96.5166%)
+
+Read2 before filtering:
+total reads: 12507554
+total bases: 1876133100
+Q20 bases: 1852220453(98.7254%)
+Q30 bases: 1789013758(95.3564%)
+Q40 bases: 1789013758(95.3564%)
+
+Read1 after filtering:
+total reads: 12190597
+total bases: 1818838448
+Q20 bases: 1811897923(99.6184%)
+Q30 bases: 1770666620(97.3515%)
+Q40 bases: 1770666620(97.3515%)
+
+Read2 after filtering:
+total reads: 12190597
+total bases: 1818838448
+Q20 bases: 1809809494(99.5036%)
+Q30 bases: 1763300901(96.9465%)
+Q40 bases: 1763300901(96.9465%)
+
+Filtering result:
+reads passed filter: 24381194
+reads failed due to low quality: 626718
+reads failed due to too many N: 7196
+reads failed due to too short: 0
+reads with adapter trimmed: 360820
+bases trimmed due to adapters: 20008736
+
+Duplication rate: 28.8709%
+
+Insert size peak (evaluated by paired-end reads): 269
+
+JSON report: fq_reports/pooled-phred30/SSi2_run2_fastp_report.json
+HTML report: fq_reports/pooled-phred30/SSi2_run2_fastp_report.html
+
+fastp -i raw/SSi2/SSi2_CKDN250012369-1A_22W3KGLT4_L3_1.fq.gz -I raw/SSi2/SSi2_CKDN250012369-1A_22W3KGLT4_L3_2.fq.gz -o fq_filtered/pooled-phred30/SSi2_run2_R1.fq.gz -O fq_filtered/pooled-phred30/SSi2_run2_R2.fq.gz -h fq_reports/pooled-phred30/SSi2_run2_fastp_report.html -j fq_reports/pooled-phred30/SSi2_run2_fastp_report.json -q 30 -w 8 
+fastp v1.0.1, time used: 35 seconds
+Read1 before filtering:
+total reads: 28141672
+total bases: 4221250800
+Q20 bases: 4188706086(99.229%)
+Q30 bases: 4075232103(96.5409%)
+Q40 bases: 4075232103(96.5409%)
+
+Read2 before filtering:
+total reads: 28141672
+total bases: 4221250800
+Q20 bases: 4169173496(98.7663%)
+Q30 bases: 4028189336(95.4264%)
+Q40 bases: 4028189336(95.4264%)
+
+Read1 after filtering:
+total reads: 27436064
+total bases: 4094242061
+Q20 bases: 4078195549(99.6081%)
+Q30 bases: 3987689669(97.3975%)
+Q40 bases: 3987689669(97.3975%)
+
+Read2 after filtering:
+total reads: 27436064
+total bases: 4094242061
+Q20 bases: 4073259193(99.4875%)
+Q30 bases: 3967370145(96.9012%)
+Q40 bases: 3967370145(96.9012%)
+
+Filtering result:
+reads passed filter: 54872128
+reads failed due to low quality: 1403406
+reads failed due to too many N: 7810
+reads failed due to too short: 0
+reads with adapter trimmed: 784090
+bases trimmed due to adapters: 43514432
+
+Duplication rate: 30.9247%
+
+Insert size peak (evaluated by paired-end reads): 267
+
+JSON report: fq_reports/pooled-phred30/SSi2_run3_fastp_report.json
+HTML report: fq_reports/pooled-phred30/SSi2_run3_fastp_report.html
+
+fastp -i raw/SSi2/SSi2_CKDN250012369-1A_22WVTJLT4_L1_1.fq.gz -I raw/SSi2/SSi2_CKDN250012369-1A_22WVTJLT4_L1_2.fq.gz -o fq_filtered/pooled-phred30/SSi2_run3_R1.fq.gz -O fq_filtered/pooled-phred30/SSi2_run3_R2.fq.gz -h fq_reports/pooled-phred30/SSi2_run3_fastp_report.html -j fq_reports/pooled-phred30/SSi2_run3_fastp_report.json -q 30 -w 8 
+fastp v1.0.1, time used: 74 seconds
+Read1 before filtering:
+total reads: 172670909
+total bases: 25900636350
+Q20 bases: 25744279509(99.3963%)
+Q30 bases: 25225863802(97.3948%)
+Q40 bases: 25225863802(97.3948%)
+
+Read2 before filtering:
+total reads: 172670909
+total bases: 25900636350
+Q20 bases: 25648188077(99.0253%)
+Q30 bases: 25012000947(96.5691%)
+Q40 bases: 25012000947(96.5691%)
+
+Read1 after filtering:
+total reads: 169415598
+total bases: 25271459144
+Q20 bases: 25202361692(99.7266%)
+Q30 bases: 24798328341(98.1278%)
+Q40 bases: 24798328341(98.1278%)
+
+Read2 after filtering:
+total reads: 169415598
+total bases: 25271459144
+Q20 bases: 25176139738(99.6228%)
+Q30 bases: 24706401552(97.764%)
+Q40 bases: 24706401552(97.764%)
+
+Filtering result:
+reads passed filter: 338831196
+reads failed due to low quality: 6464330
+reads failed due to too many N: 46292
+reads failed due to too short: 0
+reads with adapter trimmed: 5154484
+bases trimmed due to adapters: 287978944
+
+Duplication rate: 33.2569%
+
+Insert size peak (evaluated by paired-end reads): 269
+
+JSON report: fq_reports/pooled-phred30/SSi3_fastp_report.json
+HTML report: fq_reports/pooled-phred30/SSi3_fastp_report.html
+
+fastp -i raw/SSi3/SSi3_CKDN250012370-1A_22V3VWLT4_L7_1.fq.gz -I raw/SSi3/SSi3_CKDN250012370-1A_22V3VWLT4_L7_2.fq.gz -o fq_filtered/pooled-phred30/SSi3_R1.fq.gz -O fq_filtered/pooled-phred30/SSi3_R2.fq.gz -h fq_reports/pooled-phred30/SSi3_fastp_report.html -j fq_reports/pooled-phred30/SSi3_fastp_report.json -q 30 -w 8 
+fastp v1.0.1, time used: 473 seconds
+cat: FILTER_DIR/SSi3_R1.fq.gz: No such file or directory

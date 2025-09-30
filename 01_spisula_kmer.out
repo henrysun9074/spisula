@@ -1,9 +1,0 @@
-Running Jellyfish for k-mer sizes: 13 15 17 19 21 23 25
-=== Processing k=13 ===
-=== Processing k=15 ===
-=== Processing k=17 ===
-=== Processing k=19 ===
-=== Processing k=21 ===
-=== Processing k=23 ===
-=== Processing k=25 ===
-Script finished, unzipped FASTQs removed

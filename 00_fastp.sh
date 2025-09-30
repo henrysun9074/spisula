@@ -131,12 +131,12 @@ fastp \
   -q 30 -w 8
 
 # Merge and clean up
-cat ${FILTER_DIR}/SSi3_R1.fq.gz ${FILTER_DIR}/SSi3_R2.fq.gz > ${FILTER_DIR}/SSi3_all.fq.gz
+cat FILTER_DIR/SSi3_R1.fq.gz ${FILTER_DIR}/SSi3_R2.fq.gz > ${FILTER_DIR}/SSi3_all.fq.gz
 rm ${FILTER_DIR}/SSi3_R*.fq.gz
 
 ######################################################################################################
 
-cat fq_filtered/phred30/SSo1_all.fq.gz fq_filtered/phred30/SSo2_all.fq.gz fq_filtered/phred30/SSo3_all.fq.gz > fq_filtered/phred30/SSoPooledAllTrimmed.fq.gz
-cat fq_filtered/phred30/SSi1_all.fq.gz fq_filtered/phred30/SSi2_all.fq.gz fq_filtered/phred30/SSi3_all.fq.gz > fq_filtered/phred30/SSiPooledAllTrimmed.fq.gz
+cat ${FILTER_DIR}/SSo1_all.fq.gz ${FILTER_DIR}/SSo2_all.fq.gz ${FILTER_DIR}/SSo3_all.fq.gz > ${FILTER_DIR}/SSoPooledAllTrimmed.fq.gz
+cat ${FILTER_DIR}/SSi1_all.fq.gz ${FILTER_DIR}/SSi2_all.fq.gz ${FILTER_DIR}/SSi3_all.fq.gz > ${FILTER_DIR}/SSiPooledAllTrimmed.fq.gz
 echo "Finished script"
 
