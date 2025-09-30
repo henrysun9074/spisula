@@ -50,7 +50,7 @@ for K in "${KMER_SIZES[@]}"; do
   jellyfish histo \
     -t 16 \
     -l 1 \
-    -h 100000 \
+    -h 10000 \
     -i 1 \
     -o "$OUTDIR/SSo_k${K}.histo" \
     "$OUTDIR/SSo_k${K}.jf"
@@ -70,7 +70,7 @@ for K in "${KMER_SIZES[@]}"; do
   jellyfish histo \
     -t 16 \
     -l 1 \
-    -h 100000 \
+    -h 10000 \
     -i 1 \
     -o "$OUTDIR/SSi_k${K}.histo" \
     "$OUTDIR/SSi_k${K}.jf"
