@@ -12,18 +12,18 @@
 cd /work/hs325/surfclam
 module load Jellyfish
 
-# Paths
-SSo_GZ="SSoPooledAllTrimmed.fq.gz"
-SSI_GZ="SSiPooledAllTrimmed.fq.gz"
+# Update paths
+SSo_GZ="/work/hs325/surfclam/fq_filtered/pooled-phred30/SSoPooledAllTrimmed.fq.gz"
+SSI_GZ="/work/hs325/surfclam/fq_filtered/pooled-phred30/SSiPooledAllTrimmed.fq.gz"
 
-SSo="SSoPooledAllTrimmed.fq"
-SSi="SSiPooledAllTrimmed.fq"
+SSo="/work/hs325/surfclam/fq_filtered/pooled-phred30/SSoPooledAllTrimmed.fq"
+SSi="/work/hs325/surfclam/fq_filtered/pooled-phred30/SSiPooledAllTrimmed.fq"
+
+OUTDIR="out/ktests_pooled_phred30"
 
 gunzip -c "$SSo_GZ" > "$SSo"
 gunzip -c "$SSI_GZ" > "$SSi"
-
-OUTDIR="ktests_pooled"
-# mkdir -p "$OUTDIR"
+mkdir -p "$OUTDIR"
 
 # default to 21 
 KMER_SIZES=("$@")
